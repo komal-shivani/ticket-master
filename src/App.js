@@ -38,7 +38,7 @@ handleTicketSubmission(ticket){
     }))
 }
 
-//update the tickets by tickets to oiginal tickets
+//update the tickets by tickets to original tickets
 handleSearch(value){
     // console.log('app',value)
     this.setState((prevState=>({

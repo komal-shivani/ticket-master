@@ -18,8 +18,7 @@ class Tickets extends React.Component{
         this.handleSearch=this.handleSearch.bind(this)
         this.handlePriorityClick=this.handlePriorityClick.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
-        this.handleCheck=this.handleCheck.bind(this)
-        
+        this.handleCheck=this.handleCheck.bind(this)   
     }
 
     componentDidMount(){
@@ -64,12 +63,9 @@ handlePriorityClick(value){
 }
 
 handleDelete(value){
-    // console.log(value)
-
     axios.delete(`http://cors-anywhere.herokuapp.com/dct-api-data.herokuapp.com/tickets/${value}?api_key=ae10e2fa0a200eb8`)
     .then(response=>{
         console.log(response.data)
-
         this.setState((prevState=>({
             tickets:prevState.tickets.filter(ticket=>
                 ticket.ticket_code.includes(value)=== false) 
@@ -105,21 +101,22 @@ let value = e.target.value
 }
 render(){
     return(
-        <div className="container">
+        <div className="container" class="p-3 mb-2 bg-light text-dark">
+            <div class="text-primary" className="d-flex justify-content-center">
+                <h2>Ticket - Master</h2>
+            </div> <br />
+            <h3>Listing-tickets:{this.state.tickets.length}</h3><br />
             <div className="row">
                 <div className="col-md-8">
-                <h2>Ticket - Master</h2>
-                <h3>Listing-tickets:{this.state.tickets.length}</h3>
-                <SearchForm handleSearch={this.handleSearch} handlePriorityClick={this.handlePriorityClick}/>
+                <SearchForm handleSearch={this.handleSearch} handlePriorityClick={this.handlePriorityClick}/><br/>
                 <TicketTable tickets={this.state.tickets} handleDelete={this.handleDelete} handleCheck={this.handleCheck}/>
                 </div>
             <div className="col-md-4">
             <TicketForm handleTicketSubmission={this.handleTicketSubmission}/>  
             </div>
-           
-           
             <Charts piHandle={this.state.tickets}/> 
             <GraghBar graghBar={this.state.tickets}/>
+           
         </div>
         </div>
     )

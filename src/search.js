@@ -22,21 +22,22 @@ class SearchForm extends React.Component{
     }
     render(){
         return(
-            <div>
+            <div class="btn-group" role="group" aria-label="Basic example"
+                class="d-flex justify-content-end">
                 <input type="text" placeholder="search by code"
                 onChange={this.handleSearchChange}/>
 
-                <button onClick={()=>{
+                <button class="btn btn-primary" onClick={()=>{
                     this.props.handlePriorityClick('all')
                 }}>All</button>
 
-                <button onClick={()=>{
+                <button class="btn btn-primary" onClick={()=>{
                     this.props.handlePriorityClick('high')
                 }}>High</button>
-                <button onClick={()=>{
+                <button class="btn btn-primary" onClick={()=>{
                     this.props.handlePriorityClick('low')
                 }}>Low</button>
-                <button onClick={()=>{
+                <button class="btn btn-primary" onClick={()=>{
                     this.props.handlePriorityClick('medium')
                 }}>Medium</button>
             </div>

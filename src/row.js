@@ -7,15 +7,8 @@ class TableRow extends React.Component{
                 statuscheck:false
         }
     }
-
-    // handleStatus(e){
-    //     const statuscheck=e.target.value
-    //     console.log(statuscheck)
-    //     this.props.status(statuscheck)
-    // }
    render(){
        return(
-
            <tr>
                <td>{this.props.ticket.ticket_code}</td>
                <td>{this.props.ticket.name}</td>
@@ -29,9 +22,8 @@ class TableRow extends React.Component{
                    onChange={this.props.status} value={this.props.ticket.ticket_code}/>
                </label>
                </td>
-               
-               
-               <td><button onClick={()=>{
+                    
+               <td><button class="btn btn-info" onClick={()=>{
                             this.props.delete(this.props.ticket.ticket_code)
                         }}>Delete</button>
                 </td>

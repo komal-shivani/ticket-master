@@ -3,16 +3,16 @@ import TableRow from './row'
 
 const TicketTable=(props)=>{
         return(
-            <table border="1">
-                <thead>
+            <table className="table">
+                <thead className="thead-dark">
                     <tr> 
-                        <td>code</td>
-                        <td>name</td>
-                        <td>department</td>
-                        <td>priority</td>
-                        <td>message</td>
-                        <td>status</td>
-                        <td>delete</td>   
+                        <th>code</th>
+                        <th>name</th>
+                        <th>department</th>
+                        <th>priority</th>
+                        <th>message</th>
+                        <th>status</th>
+                        <th>delete</th>   
                     </tr>
                 </thead>
                 <tbody>

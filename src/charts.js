@@ -9,6 +9,7 @@ class Charts extends React.Component{
         console.log(this.props.piHandle)
         return(
             <div>
+                <h2>Ticket-pieChart</h2>
               {this.props.piHandle.forEach(pielement => {
                    if(pielement.priority==="high"){
                        high++
